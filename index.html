@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bubble bubble-one"></div>
+  <div class="bubble bubble-two"></div>
+  <div class="bubble bubble-three"></div>
+
+  <main class="app">
+
+    <header>
+      <div class="icon">✓</div>
+      <h1>Student Task Manager</h1>
+      <p>Plan your study. Track your progress.</p>
+    </header>
+
+    <section class="stats">
+
+      <div class="stat-card">
+        <span>📋</span>
+        <p>Total</p>
+        <h2 id="total">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <span>⏳</span>
+        <p>Pending</p>
+        <h2 id="pending">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <span>✓</span>
+        <p>Completed</p>
+        <h2 id="completed">0</h2>
+      </div>
+
+    </section>
+
+    <section class="task-form">
+
+      <h2>Add New Task</h2>
+
+      <input
+        type="text"
+        id="title"
+        placeholder="Enter task title"
+      >
+
+      <div class="row">
+
+        <select id="category">
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="DSA">DSA</option>
+          <option value="English">English</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <select id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+      </div>
+
+      <input
+        type="date"
+        id="deadline"
+      >
+
+      <button id="addTaskBtn">
+        + Add Task
+      </button>
+
+    </section>
+
+    <section class="tasks-section">
+
+      <div class="task-heading">
+        <h2>My Tasks</h2>
+
+        <input
+          type="text"
+          id="search"
+          placeholder="Search task..."
+        >
+      </div>
+
+      <div id="taskList"></div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
