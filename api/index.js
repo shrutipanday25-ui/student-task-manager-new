@@ -1,13 +1,10 @@
 const express = require("express");
-const path = require("path");
 
 const app = express();
 
 let tasks = [];
 
 app.use(express.json());
-
-app.use(express.static(path.join(__dirname, "..")));
 
 app.get("/api/tasks", (req, res) => {
   res.json(tasks);
@@ -61,17 +58,5 @@ app.delete("/api/tasks/:id", (req, res) => {
     message: "Task deleted"
   });
 });
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "index.html"));
-});
-
-if (require.main === module) {
-  const PORT = process.env.PORT || 4000;
-
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
-}
 
 module.exports = app;
